@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tukis</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@300&family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <h1 >¡Ahhhhhhhhhhhh!</h1>
+    <p class="letras"> pai sorry, pero actualmente estamos experimentando problemas técnicos y nuestra página se encuentra temporalmente fuera de servicio. Nuestro equipo de técnicos está trabajando arduamente para solucionar la situación y restablecer el servicio lo antes posible. Apreciamos tu paciencia y comprensión mientras abordamos esta situación. Gracias por tu comprensión.</p>
+    <p id="cuentaReg"></p>
+
+    <script>
+        var cuentaReg = new Date("Dec 22, 2023 23:59:59").getTime();
+        var x = setInterval(function() {
+        var now = new Date().getTime();
+        var minQueFaltan = cuentaReg - now;
+        var days = Math.floor(minQueFaltan / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((minQueFaltan % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((minQueFaltan % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((minQueFaltan % (1000 * 60)) / 1000);
+        document.getElementById("cuentaReg").innerHTML = days + "d " + hours + "h " +
+        minutes + "m " + seconds + "s ";
+        if (minQueFaltan < 0) {
+            clearInterval(x);
+            document.getElementById("cuentaReg").innerHTML = "Se acabo yeeei";
+        }
+        }, 1000);
+    </script>
+
+</body>
+</html>
