@@ -16,7 +16,7 @@
     <p id="cuentaReg"></p>
 
     <script>
-        var cuentaReg = new Date("Dec 22, 2023 23:59:59").getTime();
+        var cuentaReg = new Date("Dec 31, 2023 23:59:59").getTime();
         var x = setInterval(function() {
         var now = new Date().getTime();
         var minQueFaltan = cuentaReg - now;
@@ -28,7 +28,7 @@
         minutes + "m " + seconds + "s ";
         if (minQueFaltan < 0) {
             clearInterval(x);
-            document.getElementById("cuentaReg").innerHTML = "Se acabo yeeei";
+            document.getElementById("cuentaReg").innerHTML = "Se Acabo el Tiempo y Feliz a";
         }
         }, 1000);
     </script>
